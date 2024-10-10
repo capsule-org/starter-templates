@@ -4305,9 +4305,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"capsuleTemplate@workspace:.":
+"capsulern@workspace:.":
   version: 0.0.0-use.local
-  resolution: "capsuleTemplate@workspace:."
+  resolution: "capsulern@workspace:."
   dependencies:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0

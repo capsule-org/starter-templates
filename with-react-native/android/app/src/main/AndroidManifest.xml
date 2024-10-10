@@ -12,9 +12,9 @@
         android:supportsRtl="true">
 
         <!-- Add the meta-data tag for asset_statements -->
-        <meta-data
+        <!-- <meta-data
             android:name="asset_statements"
-            android:resource="@string/asset_statements" />
+            android:resource="@string/asset_statements" /> -->
 
         <activity
             android:name=".MainActivity"

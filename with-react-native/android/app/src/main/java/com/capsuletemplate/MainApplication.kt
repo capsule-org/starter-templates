@@ -1,4 +1,4 @@
-package com.capsuletemplate
+package com.usecapsule.template.reactnative
 
 import android.app.Application
 import com.facebook.react.PackageList

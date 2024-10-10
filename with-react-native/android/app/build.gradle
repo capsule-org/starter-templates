@@ -78,9 +78,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.capsuletemplate"
+    namespace "com.usecapsule.template.reactnative"
     defaultConfig {
-        applicationId "com.capsuletemplate"
+        applicationId "com.usecapsule.template.reactnative"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "capsuleTemplate.app"
-               BlueprintName = "capsuleTemplate"
-               ReferencedContainer = "container:capsuleTemplate.xcodeproj">
+               BuildableName = "capsuleRN.app"
+               BlueprintName = "capsuleRN"
+               ReferencedContainer = "container:capsuleRN.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "capsuleTemplateTests.xctest"
-               BlueprintName = "capsuleTemplateTests"
-               ReferencedContainer = "container:capsuleTemplate.xcodeproj">
+               BuildableName = "capsuleRNTests.xctest"
+               BlueprintName = "capsuleRNTests"
+               ReferencedContainer = "container:capsuleRN.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "capsuleTemplate.app"
-            BlueprintName = "capsuleTemplate"
-            ReferencedContainer = "container:capsuleTemplate.xcodeproj">
+            BuildableName = "capsuleRN.app"
+            BlueprintName = "capsuleRN"
+            ReferencedContainer = "container:capsuleRN.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "capsuleTemplate.app"
-            BlueprintName = "capsuleTemplate"
-            ReferencedContainer = "container:capsuleTemplate.xcodeproj">
+            BuildableName = "capsuleRN.app"
+            BlueprintName = "capsuleRN"
+            ReferencedContainer = "container:capsuleRN.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
