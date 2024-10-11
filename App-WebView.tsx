@@ -1,17 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import Config from 'react-native-config';
+import React, {useState, useEffect} from 'react';
 import {
-  SafeAreaView,
+  View,
   Text,
   StyleSheet,
-  View,
   TextInput,
   TouchableOpacity,
-  Alert,
+  SafeAreaView,
 } from 'react-native';
-import PolyfillCrypto from 'react-native-webview-crypto';
-import Config from 'react-native-config';
 import {CapsuleMobile, Environment} from '@usecapsule/react-native-wallet';
-import {webcrypto} from 'crypto';
+import InAppBrowser from 'react-native-inappbrowser-reborn';
 
 const capsuleClient = new CapsuleMobile(
   Environment.BETA,
@@ -22,7 +20,7 @@ const capsuleClient = new CapsuleMobile(
   },
 );
 
-function App(): React.JSX.Element {
+export const WebviewPasskeysAuth = () => {
   const [authStage, setAuthStage] = useState('initial');
   const [email, setEmail] = useState('');
   const [verificationCode, setVerificationCode] = useState('');
@@ -30,17 +28,35 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     const initCapsule = async () => {
-      try {
-        await capsuleClient.init();
-      } catch (error) {
-        console.error('Error initializing Capsule:', error);
-        setError('Failed to initialize. Please try again.');
-      }
+      await capsuleClient.init();
     };
     initCapsule();
   }, []);
 
-  const handleCreateAccount = async () => {
+  const handleLogin = async () => {
+    try {
+      setError('');
+      const userExists = await capsuleClient.checkIfUserExists(email);
+      if (!userExists) {
+        setError('User does not exist. Please create a new account.');
+        return;
+      }
+      const webAuthLoginUrl = await capsuleClient.initiateUserLogin(
+        email,
+        true,
+      );
+      await InAppBrowser.open(webAuthLoginUrl);
+      await capsuleClient.waitForLoginAndSetup();
+      InAppBrowser.close();
+      const wallets = capsuleClient.getWallets();
+      setAuthStage('authenticated');
+    } catch (error) {
+      console.error('Login error:', error);
+      setError('Login failed. Please try again.');
+    }
+  };
+
+  const handleCreateUser = async () => {
     try {
       setError('');
       const userExists = await capsuleClient.checkIfUserExists(email);
@@ -51,57 +67,25 @@ function App(): React.JSX.Element {
       await capsuleClient.createUser(email);
       setAuthStage('verification');
     } catch (error) {
-      console.error('Error creating user:', error);
-      setError('Failed to create account. Please try again.');
+      console.error('User creation error:', error);
+      setError('User creation failed. Please try again.');
     }
   };
 
-  const handleVerifyCode = async () => {
+  const handleVerification = async () => {
     try {
       setError('');
-      const biometricsId = await capsuleClient.verifyEmailBiometricsId(
+      const webAuthCreateUrl = await capsuleClient.verifyEmail(
         verificationCode,
       );
-      console.log('Biometrics ID', biometricsId);
-
-      await capsuleClient.registerPasskey(
-        email,
-        biometricsId,
-        crypto as webcrypto.Crypto,
-      );
-
-      const {wallets, recoverySecret} =
-        await capsuleClient.createWalletPerType();
-      console.log('wallets', wallets);
-      console.log('recoverySecret', recoverySecret);
+      await InAppBrowser.open(webAuthCreateUrl);
+      await capsuleClient.waitForPasskeyAndCreateWallet();
+      InAppBrowser.close();
       setAuthStage('authenticated');
     } catch (error) {
-      console.error('Error verifying code:', error);
-      setError('Failed to verify code. Please try again.');
+      console.error('Verification error:', error);
+      setError('Verification failed. Please check your code and try again.');
     }
-  };
-
-  const handleLoginWithPasskey = async () => {
-    try {
-      setError('');
-      const userExists = await capsuleClient.checkIfUserExists(email);
-      if (!userExists) {
-        setError('User does not exist. Please create an account.');
-        return;
-      }
-      const wallets = await capsuleClient.login();
-      console.log('wallets', wallets);
-      setAuthStage('authenticated');
-    } catch (error) {
-      console.error('Error during passkey authentication:', error);
-      setError('Login failed. Please try again.');
-    }
-  };
-
-  const handleGetWallets = () => {
-    const wallets = capsuleClient.getWallets();
-    console.log(wallets);
-    Alert.alert('Wallets', JSON.stringify(wallets, null, 2));
   };
 
   const renderContent = () => {
@@ -120,16 +104,16 @@ function App(): React.JSX.Element {
             />
             <TouchableOpacity
               style={styles.button}
-              onPress={handleLoginWithPasskey}
+              onPress={handleLogin}
               disabled={!email.trim()}>
-              <Text style={styles.buttonText}>Login with Passkey</Text>
+              <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={[styles.button, styles.secondaryButton]}
-              onPress={handleCreateAccount}
+              onPress={handleCreateUser}
               disabled={!email.trim()}>
               <Text style={[styles.buttonText, styles.secondaryButtonText]}>
-                Create Account
+                Create New User
               </Text>
             </TouchableOpacity>
           </View>
@@ -137,6 +121,10 @@ function App(): React.JSX.Element {
       case 'verification':
         return (
           <View>
+            <Text style={styles.text}>
+              A verification email has been sent. Please check your email and
+              enter the verification code below.
+            </Text>
             <Text style={styles.label}>Verification Code</Text>
             <TextInput
               style={styles.input}
@@ -147,7 +135,7 @@ function App(): React.JSX.Element {
             />
             <TouchableOpacity
               style={styles.button}
-              onPress={handleVerifyCode}
+              onPress={handleVerification}
               disabled={!verificationCode.trim()}>
               <Text style={styles.buttonText}>Verify</Text>
             </TouchableOpacity>
@@ -156,10 +144,7 @@ function App(): React.JSX.Element {
       case 'authenticated':
         return (
           <View>
-            <Text style={styles.welcomeText}>Welcome!</Text>
-            <TouchableOpacity style={styles.button} onPress={handleGetWallets}>
-              <Text style={styles.buttonText}>Get Wallets</Text>
-            </TouchableOpacity>
+            <Text style={styles.successText}>You are now authenticated.</Text>
           </View>
         );
     }
@@ -167,15 +152,14 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PolyfillCrypto />
       <View style={styles.content}>
-        <Text style={styles.title}>Capsule Wallet</Text>
+        <Text style={styles.title}>Passkeys Authentication</Text>
         {renderContent()}
         {error ? <Text style={styles.errorText}>{error}</Text> : null}
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -188,10 +172,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#333',
-    marginBottom: 32,
+    marginBottom: 24,
     textAlign: 'center',
   },
   label: {
@@ -230,11 +214,10 @@ const styles = StyleSheet.create({
   secondaryButtonText: {
     color: '#007AFF',
   },
-  welcomeText: {
-    fontSize: 24,
-    fontWeight: 'bold',
+  text: {
+    fontSize: 16,
     color: '#333',
-    marginBottom: 24,
+    marginBottom: 16,
     textAlign: 'center',
   },
   errorText: {
@@ -243,6 +226,12 @@ const styles = StyleSheet.create({
     marginTop: 16,
     textAlign: 'center',
   },
+  successText: {
+    fontSize: 18,
+    color: '#4CD964',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
 
-export default App;
+export default WebviewPasskeysAuth;
