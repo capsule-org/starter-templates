@@ -1,71 +1,87 @@
-# Capsule Starter Templates
+# Capsule React Native Starter Template
 
-This repository provides minimal starter templates for integrating Capsule into various frameworks and environments.
-Each template folder is designed to be used as a starting point for your project, providing a basic setup with the
-Capsule client initialized.
+This template provides a minimal setup to get Capsule working in a React Native application. It includes a basic Capsule client initialization and a simple "Hello World" component that displays the Capsule API key and environment.
 
-## Available Templates
+## Prerequisites
 
-- `with-react-native`
-- More Coming Soon!
+- Node.js and npm (or yarn)
+- React Native development environment set up (including Xcode for iOS and Android Studio for Android)
+- CocoaPods (for iOS)
+- Capsule API key (obtain from [developer.usecapsule.com](https://developer.usecapsule.com))
 
-## Template Structure
+## Getting Started
 
-Each template in this repository follows a consistent structure:
-
-1. Basic project setup for the respective framework
-2. Capsule client initialization
-3. A simple "Hello World" component that displays the Capsule API key and environment
-
-## Features
-
-- Barebones setup for quick start
-- Capsule client class creation
-- Minimal "Hello World" output
-- Pre-configured polyfills, shims, or configurations for passkeys (where applicable)
-
-## Usage
-
-1. Clone this repository:
+1. Copy this template folder to your project location and rename it:
 
    ```
-   git clone https://github.com/your-org/capsule-starter-templates.git
+   cp -r path/to/capsule-starter-templates/with-react-native my-capsule-project
+   cd my-capsule-project
    ```
 
-2. Copy the desired template folder to your project location:
+2. Rename the project in the following files:
 
-   ```
-   cp -r capsule-starter-templates/with-react my-new-project
-   ```
+   - `package.json`: Update the "name" field
+   - `app.json`: Update the "name" and "displayName" fields
+   - iOS: Update the project name in Xcode
+   - Android: Update `android/app/src/main/java/com/[your_project_name]/MainActivity.java`
 
-3. Navigate to your new project directory:
+3. Set up your Capsule API key:
 
-   ```
-   cd my-new-project
-   ```
+   - Rename `.env.example` to `.env`
+   - Open `.env` and replace `YOUR_CAPSULE_API_KEY` with your actual Capsule API key
 
 4. Install dependencies:
 
    ```
-   npm install
+   yarn install
    ```
 
-5. Run the development server:
+5. For iOS, install CocoaPods dependencies:
 
    ```
-   npm run dev
+   cd ios && pod install && cd ..
    ```
 
-6. Open the application in your browser or emulator to see the Capsule client information.
+6. For Android, clean the project:
 
-## Important Notes
+   ```
+   cd android && ./gradlew clean && cd ..
+   ```
 
-- Each template folder is meant to be used independently as a starting point for your project.
-- These templates provide only the basic setup for Capsule integration.
-- There is no additional UI or usage of the Capsule client for authentication or signing.
-- The templates are intended as starting points and should be built upon for your specific use case.
+7. Start the Metro bundler:
+
+   ```
+   yarn start
+   ```
+
+8. In a new terminal, run the app on your preferred platform:
+
+   For iOS:
+
+   ```
+   yarn ios
+   ```
+
+   For Android:
+
+   ```
+   yarn android
+   ```
+
+## What's Included
+
+- Basic React Native project structure
+- Capsule client initialization
+- A simple component displaying Capsule client information
+
+## Next Steps
+
+- Build upon this template to implement Capsule features in your app
+- For detailed instructions on how to start using the Capsule client, refer to the official documentation:
+  [https://docs.usecapsule.com/getting-started/initial-setup/react-native](https://docs.usecapsule.com/getting-started/initial-setup/react-native)
+- For a complete example that integrates Capsule and demonstrates actual usage of the client and methods, check out:
+  [https://github.com/capsule-org/examples-hub/tree/main/mobile/with-react-native](https://github.com/capsule-org/examples-hub/tree/main/mobile/with-react-native)
 
 ## Support
 
-For questions or issues related to Capsule integration, please refer to the
-[Capsule documentation](https://docs.usecapsule.org) or open an issue in this repository.
+For questions about Capsule integration, refer to the [Capsule documentation](https://docs.usecapsule.com) or open an issue in the main starter templates repository.

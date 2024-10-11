@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">capsuleRN</string>
-    <string name="asset_statements" translatable="false">
-    [{
-      \"include\": \"https://app.beta.usecapsule.com/.well-known/assetlinks.json\"
-    }]
-    </string>
-</resources>
