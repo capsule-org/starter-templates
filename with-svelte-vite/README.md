@@ -1,47 +1,144 @@
-# Svelte + TS + Vite
+# Capsule Svelte + Vite Starter Template
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+This template provides a minimal setup to get Capsule working in a Svelte + Vite application. It includes a basic
+Capsule client initialization and the necessary configurations to support React components within Svelte.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- Minimal Capsule client configuration using `@usecapsule/react-sdk`
+- Pre-configured Capsule Modal setup
+- Environment-based API key configuration
+- React integration within Svelte using `svelte-preprocess-react`
+- Vite configuration with `vite-plugin-node-polyfills`
 
-## Need an official Svelte framework?
+## Prerequisites
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- Capsule API Key (obtain from [developer.usecapsule.com](https://developer.usecapsule.com))
 
-## Technical considerations
+## Getting Started
 
-**Why use this over SvelteKit?**
+1. Copy this template folder to your project location and rename it:
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+   ```bash
+   cp -r path/to/capsule-starter-templates/with-svelte-vite my-capsule-project
+   cd my-capsule-project
+   ```
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+2. Install dependencies (choose your preferred package manager):
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+   ```bash
+   # Using npm
+   npm install
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+   # Using yarn
+   yarn install
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+   # Using pnpm
+   pnpm install
 
-**Why include `.vscode/extensions.json`?**
+   # Using bun
+   bun install
+   ```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+3. Set up your Capsule API key:
 
-**Why enable `allowJs` in the TS template?**
+   - Rename `.env.example` to `.env`
+   - Update the API key:
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+   ```bash
+   VITE_CAPSULE_API_KEY=your_api_key_here
+   ```
 
-**Why is HMR not preserving my local component state?**
+4. Start the development server:
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
+   ```bash
+   # Using npm
+   npm run dev
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+   # Using yarn
+   yarn dev
 
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+   # Using pnpm
+   pnpm dev
+
+   # Using bun
+   bun dev
+   ```
+
+## Framework-Specific Details
+
+This Svelte + Vite starter template includes several important configurations:
+
+### React Integration
+
+The template includes React as a dependency since the Capsule Modal is React-based:
+
+```json
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
 ```
+
+### Svelte Preprocessor Configuration
+
+The template uses `svelte-preprocess-react` to handle React components. This is configured in `svelte.config.js`:
+
+```javascript
+import preprocessReact from "svelte-preprocess-react";
+
+export default {
+  preprocess: [preprocessReact()],
+  // ... other config
+};
+```
+
+### Required Vite Plugin
+
+The template includes `vite-plugin-node-polyfills` for necessary Node.js polyfills. This is configured in
+`vite.config.js`:
+
+```javascript
+import { nodePolyfills } from "vite-plugin-node-polyfills";
+
+export default defineConfig({
+  plugins: [nodePolyfills()],
+  // ... other config
+});
+```
+
+### Using Capsule Components
+
+To use the Capsule Modal in your Svelte components:
+
+```svelte
+<script lang="ts">
+  import { CapsuleModal } from "@usecapsule/react-sdk";
+  import { sveltify } from "svelte-preprocess-react";
+
+  const react = sveltify({ CapsuleModal });
+</script>
+
+<react.CapsuleModal {...yourProps} />
+```
+
+## Usage
+
+1. Build upon the provided example component
+2. Implement additional Capsule features as needed
+3. Modify the CapsuleModal component props as required
+
+For detailed documentation, visit [docs.usecapsule.com](https://docs.usecapsule.com)
+
+## Example Implementation
+
+For more complex implementations and examples, check out our
+[Examples Hub](https://github.com/capsule-org/Examples-Hub/). You'll find examples of:
+
+- Authentication options
+- Signer implementations
+- Session management
+- Interactive tutorials
+- Framework-specific code snippets

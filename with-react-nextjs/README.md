@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Capsule Next.js Starter Template
+
+This template provides a minimal setup to get Capsule working in a Next.js application. It includes a basic Capsule
+client initialization and integration with Next.js App Router.
+
+## Features
+
+- Minimal Capsule client configuration using `@usecapsule/react-sdk`
+- Pre-configured Capsule Modal setup
+- Environment-based API key configuration
+- Next.js App Router setup
+- Client-side rendering configuration
+
+## Prerequisites
+
+- Capsule API Key (obtain from [developer.usecapsule.com](https://developer.usecapsule.com))
 
 ## Getting Started
 
-First, run the development server:
+1. Copy this template folder to your project location and rename it:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   cp -r path/to/capsule-starter-templates/with-react-nextjs my-capsule-project
+   cd my-capsule-project
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies (choose your preferred package manager):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   # Using npm
+   npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   # Using yarn
+   yarn install
 
-## Learn More
+   # Using pnpm
+   pnpm install
 
-To learn more about Next.js, take a look at the following resources:
+   # Using bun
+   bun install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Set up your Capsule API key:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   - Rename `.env.example` to `.env.local`
+   - Update the API key:
 
-## Deploy on Vercel
+   ```bash
+   NEXT_PUBLIC_CAPSULE_API_KEY=your_api_key_here
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Start the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   # Using npm
+   npm run dev
+
+   # Using yarn
+   yarn dev
+
+   # Using pnpm
+   pnpm dev
+
+   # Using bun
+   bun dev
+   ```
+
+## Framework-Specific Details
+
+This Next.js starter template uses the App Router and includes the necessary configurations for client-side rendering
+with Capsule. Key points:
+
+- Uses the "use client" directive for client-side rendering
+- Configured for proper client state management
+- Includes necessary component wrapping for Capsule Modal
+- Environment variable setup optimized for Next.js
+
+## Usage
+
+1. Build upon the provided example component
+2. Implement additional Capsule features as needed
+3. Modify the CapsuleModal component props as required
+
+For detailed documentation, visit [docs.usecapsule.com](https://docs.usecapsule.com)
+
+## Example Implementation
+
+For more complex implementations and examples, check out our
+[Examples Hub](https://github.com/capsule-org/Examples-Hub/). You'll find examples of:
+
+- Authentication options
+- Signer implementations
+- Session management
+- Interactive tutorials
+- Framework-specific code snippets

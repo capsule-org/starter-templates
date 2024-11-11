@@ -6,66 +6,100 @@ Capsule client initialized.
 
 ## Available Templates
 
-- `with-react-native`
-- More Coming Soon!
+### React Ecosystem
 
-## Template Structure
+- `with-react-native` - React Native setup with native modules and configurations
+- `with-react-nextjs` - Next.js App Router setup with client-side rendering
+- `with-react-vite` - Vite + React setup with node polyfills
 
-Each template in this repository follows a consistent structure:
+### Svelte Ecosystem
 
-1. Basic project setup for the respective framework
-2. Capsule client initialization
-3. A simple "Hello World" component that displays the Capsule API key and environment
+- `with-svelte-kit` - SvelteKit setup with React support and node polyfills
+- `with-svelte-vite` - Vite + Svelte setup with React support
 
-## Features
+### Vue Ecosystem
 
-- Barebones setup for quick start
-- Capsule client class creation
-- Minimal "Hello World" output
-- Pre-configured polyfills, shims, or configurations for passkeys (where applicable)
+- `with-vue-nuxt` - Nuxt 3 setup with React support and client-side rendering
+- `with-vue-vite` - Vite + Vue setup with React support
 
-## Usage
+## Framework-Specific Features
+
+### React Native Template
+
+- Complete native module setup
+- Required polyfills and shims
+- iOS and Android configurations
+- Bundle identifier setup
+
+### Web Framework Templates
+
+- Capsule Modal integration
+- Environment-based API key configuration
+- Framework-specific builds and configurations:
+  - **Next.js**: App Router with client-side rendering
+  - **Vite + React**: Node polyfills and build optimization
+  - **SvelteKit/Svelte**: React preprocessing and integration
+  - **Nuxt 3/Vue**: React support within Vue environment
+
+## Getting Started
 
 1. Clone this repository:
 
-   ```
-   git clone https://github.com/your-org/capsule-starter-templates.git
-   ```
-
-2. Copy the desired template folder to your project location:
-
-   ```
-   cp -r capsule-starter-templates/with-react my-new-project
+   ```bash
+   git clone https://github.com/capsule-org/capsule-starter-templates.git
    ```
 
-3. Navigate to your new project directory:
+2. Choose and navigate to your desired template:
 
-   ```
-   cd my-new-project
-   ```
-
-4. Install dependencies:
-
-   ```
-   npm install
+   ```bash
+   cd capsule-starter-templates/[template-name]
    ```
 
-5. Run the development server:
+3. Follow the template-specific README instructions for:
+   - Installing dependencies
+   - Setting up environment variables
+   - Starting the development server
+   - Additional configuration steps (if required)
 
-   ```
-   npm run dev
-   ```
+## Template Structure
 
-6. Open the application in your browser or emulator to see the Capsule client information.
+Each template provides:
+
+1. Basic framework setup
+2. Capsule client initialization
+3. Minimal example component
+4. Environment configuration
+5. Framework-specific optimizations
+6. Necessary build configurations
 
 ## Important Notes
 
-- Each template folder is meant to be used independently as a starting point for your project.
-- These templates provide only the basic setup for Capsule integration.
-- There is no additional UI or usage of the Capsule client for authentication or signing.
-- The templates are intended as starting points and should be built upon for your specific use case.
+### General
 
-## Support
+- Each template is independent and can be used as a standalone starter
+- Templates provide essential Capsule integration setup
+- Build upon these templates for your specific use case
 
-For questions or issues related to Capsule integration, please refer to the
-[Capsule documentation](https://docs.usecapsule.org) or open an issue in this repository.
+### Framework Specific
+
+- React Native requires additional native setup steps
+- Web frameworks include Capsule Modal integration
+- Some frameworks require specific plugins or preprocessors
+- SSR considerations for Next.js and Nuxt 3
+
+For detailed instructions, refer to each template's individual README.
+
+## Example Hub
+
+For more complex implementations and examples, check out our
+[Examples Hub](https://github.com/capsule-org/Examples-Hub/). You'll find comprehensive examples of:
+
+- Authentication implementations
+- Signer options
+- Session management
+- Server-side integration
+- Framework-specific features
+
+## Documentation
+
+For detailed Capsule integration documentation, visit [docs.usecapsule.com](https://docs.usecapsule.com)

@@ -1,19 +1,29 @@
 # Capsule React Native Starter Template
 
-This template provides a minimal setup to get Capsule working in a React Native application. It includes a basic Capsule client initialization and a simple "Hello World" component that displays the Capsule API key and environment.
+This template provides a complete setup to get Capsule working in a React Native application. It includes essential configurations, components, and a basic implementation to help you get started quickly.
+
+## Features
+
+- Pre-configured vanilla React Native setup
+- Complete Capsule SDK integration including:
+  - `@usecapsule/react-native-passkey`
+  - `@usecapsule/react-native-wallet`
+- Configured Metro bundler with necessary settings
+- Pre-configured shims and polyfills
+- Environment-based API key configuration
+- Basic "Hello World" component displaying Capsule client information
 
 ## Prerequisites
 
-- Node.js and npm (or yarn)
 - React Native development environment set up (including Xcode for iOS and Android Studio for Android)
 - CocoaPods (for iOS)
-- Capsule API key (obtain from [developer.usecapsule.com](https://developer.usecapsule.com))
+- Capsule API Key (obtain from [developer.usecapsule.com](https://developer.usecapsule.com))
 
 ## Getting Started
 
 1. Copy this template folder to your project location and rename it:
 
-   ```
+   ```bash
    cp -r path/to/capsule-starter-templates/with-react-native my-capsule-project
    cd my-capsule-project
    ```
@@ -22,66 +32,86 @@ This template provides a minimal setup to get Capsule working in a React Native 
 
    - `package.json`: Update the "name" field
    - `app.json`: Update the "name" and "displayName" fields
-   - iOS: Update the project name in Xcode
-   - Android: Update `android/app/src/main/java/com/[your_project_name]/MainActivity.java`
+   - iOS: Update the project name in Xcode and bundle identifier
+   - Android: Update package name in:
+     - `android/app/src/main/java/com/[your_project_name]/MainActivity.java`
+     - `android/app/build.gradle` (applicationId)
+     - `AndroidManifest.xml`
+     - Folder structure in `android/app/src/main/java/`
 
-3. Set up your Capsule API key:
+3. Install dependencies (choose your preferred package manager):
 
-   - Rename `.env.example` to `.env`
-   - Open `.env` and replace `YOUR_CAPSULE_API_KEY` with your actual Capsule API key
+   ```bash
+   # Using npm
+   npm install
 
-4. Install dependencies:
-
-   ```
+   # Using yarn
    yarn install
+
+   # Using pnpm
+   pnpm install
+
+   # Using bun
+   bun install
    ```
 
-5. For iOS, install CocoaPods dependencies:
+4. For iOS, install CocoaPods dependencies:
 
-   ```
+   ```bash
    cd ios && pod install && cd ..
    ```
 
-6. For Android, clean the project:
+5. For Android, clean the project:
 
-   ```
+   ```bash
    cd android && ./gradlew clean && cd ..
+   ```
+
+6. Set up your Capsule API key:
+
+   - Rename `.env.example` to `.env`
+   - Update the API key:
+
+   ```bash
+   CAPSULE_API_KEY=your_api_key_here
    ```
 
 7. Start the Metro bundler:
 
-   ```
-   yarn start
-   ```
-
-8. In a new terminal, run the app on your preferred platform:
-
-   For iOS:
-
-   ```
-   yarn ios
+   ```bash
+   npm start    # or yarn start, pnpm start, bun start
    ```
 
-   For Android:
+8. Run the application:
 
+   ```bash
+   # For iOS
+   npm run ios    # or yarn ios, pnpm ios, bun ios
+
+   # For Android
+   npm run android    # or yarn android, pnpm android, bun android
    ```
-   yarn android
-   ```
 
-## What's Included
+## Framework-Specific Details
 
-- Basic React Native project structure
-- Capsule client initialization
-- A simple component displaying Capsule client information
+⚠️ **Important Setup Note**: Before running the application, ensure you have properly renamed ALL instances of the package/bundle identifiers throughout both the iOS and Android folders. Incorrect package/bundle identifiers can prevent the apps from running.
 
-## Next Steps
+### Included Setup
 
-- Build upon this template to implement Capsule features in your app
-- For detailed instructions on how to start using the Capsule client, refer to the official documentation:
-  [https://docs.usecapsule.com/getting-started/initial-setup/react-native](https://docs.usecapsule.com/getting-started/initial-setup/react-native)
-- For a complete example that integrates Capsule and demonstrates actual usage of the client and methods, check out:
-  [https://github.com/capsule-org/examples-hub/tree/main/mobile/with-react-native](https://github.com/capsule-org/examples-hub/tree/main/mobile/with-react-native)
+- Complete Metro configuration for Capsule SDK
+- Necessary shims and polyfills pre-configured
+- Native modules setup for both iOS and Android
+- Basic Capsule client initialization
+- Sample component displaying Capsule client information
 
-## Support
+## Usage
 
-For questions about Capsule integration, refer to the [Capsule documentation](https://docs.usecapsule.com) or open an issue in the main starter templates repository.
+1. Build upon the provided example component
+2. Implement additional Capsule features as needed
+3. Modify the provided components and configurations to match your requirements
+
+For detailed documentation, visit [docs.usecapsule.com](https://docs.usecapsule.com)
+
+## Example Implementation
+
+For a complete example that integrates Capsule and demonstrates actual usage of the client and methods, check out our [Examples Hub](https://github.com/capsule-org/examples-hub/tree/main/mobile/with-react-native)

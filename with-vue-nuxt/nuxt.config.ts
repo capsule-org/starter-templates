@@ -1,4 +1,5 @@
 import react from "@vitejs/plugin-react";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -6,6 +7,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   vite: {
-    plugins: [react()],
+    plugins: [react(), nodePolyfills()],
   },
 });

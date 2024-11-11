@@ -1,50 +1,103 @@
-# React + TypeScript + Vite
+# Capsule React Vite Starter Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get Capsule working in a Vite + React application. It includes a basic Capsule
+client initialization and the necessary Vite configurations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Minimal Capsule client configuration using `@usecapsule/react-sdk`
+- Pre-configured Capsule Modal setup
+- Environment-based API key configuration
+- Vite configuration with `vite-plugin-node-polyfills` for required Node.js polyfills
+- Fast development setup with Vite
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Capsule API Key (obtain from [developer.usecapsule.com](https://developer.usecapsule.com))
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Copy this template folder to your project location and rename it:
+
+   ```bash
+   cp -r path/to/capsule-starter-templates/with-react-vite my-capsule-project
+   cd my-capsule-project
+   ```
+
+2. Install dependencies (choose your preferred package manager):
+
+   ```bash
+   # Using npm
+   npm install
+
+   # Using yarn
+   yarn install
+
+   # Using pnpm
+   pnpm install
+
+   # Using bun
+   bun install
+   ```
+
+3. Set up your Capsule API key:
+
+   - Rename `.env.example` to `.env`
+   - Update the API key:
+
+   ```bash
+   VITE_CAPSULE_API_KEY=your_api_key_here
+   ```
+
+4. Start the development server:
+
+   ```bash
+   # Using npm
+   npm run dev
+
+   # Using yarn
+   yarn dev
+
+   # Using pnpm
+   pnpm dev
+
+   # Using bun
+   bun dev
+   ```
+
+## Framework-Specific Details
+
+This Vite + React starter template includes essential configurations:
+
+### Required Vite Plugin
+
+The template uses `vite-plugin-node-polyfills` to provide necessary Node.js polyfills required by Capsule. This is
+configured in `vite.config.ts`:
+
+```typescript
+import { nodePolyfills } from "vite-plugin-node-polyfills";
+
+export default defineConfig({
+  plugins: [react(), nodePolyfills()],
+  // ... other config
+});
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Build upon the provided example component
+2. Implement additional Capsule features as needed
+3. Modify the CapsuleModal component props as required
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+For detailed documentation, visit [docs.usecapsule.com](https://docs.usecapsule.com)
+
+## Example Implementation
+
+For more complex implementations and examples, check out our
+[Examples Hub](https://github.com/capsule-org/Examples-Hub/). You'll find examples of:
+
+- Authentication options
+- Signer implementations
+- Session management
+- Interactive tutorials
+- Framework-specific code snippets
