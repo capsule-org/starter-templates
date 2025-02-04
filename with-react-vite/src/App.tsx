@@ -1,25 +1,25 @@
-import { AuthLayout, CapsuleModal, OAuthMethod } from "@usecapsule/react-sdk";
-import "@usecapsule/react-sdk/styles.css";
+import { AuthLayout, CapsuleModal, OAuthMethod } from "@getpara/react-sdk";
+import "@getpara/react-sdk/styles.css";
 import { useState } from "react";
 
-import { capsuleClient } from "./client/capsule";
-import Logo from "./assets/capsule-logo.svg";
+import { para } from "./client/para";
+import Logo from "./assets/para-logo.svg";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Capsule Modal Starter Template with Next.js</h1>
+      <h1>Para Modal Starter Template with Next.js</h1>
       <button
         onClick={() => setIsModalOpen(true)}
         style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}>
-        Open Capsule Modal
+        Open Para Modal
       </button>
       <CapsuleModal
-        appName="Capsule Modal Starter Template"
+        appName="Para Modal Starter Template"
         authLayout={[AuthLayout.AUTH_FULL]}
-        capsule={capsuleClient}
+        para={para}
         disableEmailLogin={false}
         disablePhoneLogin={false}
         isOpen={isModalOpen}

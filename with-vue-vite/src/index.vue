@@ -1,20 +1,20 @@
 <template>
   <div style="text-align: center; margin-top: 50px">
-    <h1>Capsule Modal Starter Template with Vue + Vite</h1>
+    <h1>Para Modal Starter Template with Vue + Vite</h1>
     <button
       @click="openModal"
       style="padding: 10px 20px; font-size: 16px; cursor: pointer">
-      Open Capsule Modal
+      Open Para Modal
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
   import { onMounted, onUnmounted, ref } from "vue";
-  import { createCapsuleModalConnector } from "./capsule-modal-connector.tsx";
-  import { capsuleClient } from "./client/capsule";
-  import Logo from "./assets/capsule-logo.svg";
-  import { OAuthMethod } from "@usecapsule/react-sdk";
+  import { createCapsuleModalConnector } from "./para-modal-connector.tsx";
+  import { para } from "./client/para";
+  import Logo from "./assets/para-logo.svg";
+  import { OAuthMethod } from "@getpara/react-sdk";
 
   const modalConnector = ref<any>(null);
 
@@ -23,11 +23,11 @@
     document.body.appendChild(container);
 
     modalConnector.value = createCapsuleModalConnector(container, {
-      capsule: capsuleClient,
+      para: para,
       onClose: () => {
         modalConnector.value?.close();
       },
-      appName: "Capsule Modal Starter Template",
+      appName: "Para Modal Starter Template",
       logo: Logo,
       disableEmailLogin: false,
       disablePhoneLogin: false,

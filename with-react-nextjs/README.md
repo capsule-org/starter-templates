@@ -46,7 +46,7 @@ client initialization and integration with Next.js App Router.
    - Update the API key:
 
    ```bash
-   NEXT_PUBLIC_CAPSULE_API_KEY=your_api_key_here
+   NEXT_PUBLIC_PARA_API_KEY=your_api_key_here
    ```
 
 4. Start the development server:

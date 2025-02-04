@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { CapsuleModal, OAuthMethod } from "@usecapsule/react-sdk";
-    import "@usecapsule/react-sdk/styles.css";
-    import Logo from "../assets/capsule-logo.svg";
-    import { capsuleClient } from "../client/capsule";
+    import { CapsuleModal, OAuthMethod } from "@getpara/react-sdk";
+    import "@getpara/react-sdk/styles.css";
+    import Logo from "../assets/para-logo.svg";
+    import { para } from "../client/para";
     import { sveltify } from "svelte-preprocess-react";
     import "./page.css";
 
@@ -11,13 +11,13 @@
   </script>
   
   <div class="container">
-    <h1>Capsule Modal Starter Template with Svelte Kit</h1>
+    <h1>Para Modal Starter Template with Svelte Kit</h1>
     <button on:click={() => isModalOpen = true}>
-      Open Capsule Modal
+      Open Para Modal
     </button>
     <react.CapsuleModal
-      capsule={capsuleClient}
-      appName="Capsule Modal Starter Template"
+      para={para}
+      appName="Para Modal Starter Template"
       logo={Logo}
       disableEmailLogin={false}
       disablePhoneLogin={false}

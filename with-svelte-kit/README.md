@@ -47,7 +47,7 @@ client initialization and the necessary configurations to support React componen
    - Update the API key:
 
    ```bash
-   PUBLIC_CAPSULE_API_KEY=your_api_key_here
+   PUBLIC_PARA_API_KEY=your_api_key_here
    ```
 
 4. Start the development server:

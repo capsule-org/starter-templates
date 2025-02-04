@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { CapsuleModal, CapsuleModalProps, OAuthMethod } from "@usecapsule/react-sdk";
-import "@usecapsule/react-sdk/styles.css";
+import { CapsuleModal, CapsuleModalProps, OAuthMethod } from "@getpara/react-sdk";
+import "@getpara/react-sdk/styles.css";
 
 export const createCapsuleModalConnector = (targetEl: HTMLElement, props: Omit<CapsuleModalProps, "isOpen">) => {
   const root = createRoot(targetEl);
@@ -20,14 +20,14 @@ export const createCapsuleModalConnector = (targetEl: HTMLElement, props: Omit<C
             font: "Inter",
             ...props.theme,
           },
-          capsule: props.capsule,
+          para: props.para,
           isOpen,
           onClose: () => {
             state.isOpen = false;
             state.render(false);
             props.onClose();
           },
-          appName: props.appName || "Capsule Modal Example",
+          appName: props.appName || "Para Modal Example",
           logo: props.logo,
           disableEmailLogin: props.disableEmailLogin,
           disablePhoneLogin: props.disablePhoneLogin,

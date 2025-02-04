@@ -12,7 +12,7 @@
 <script setup lang="ts">
   import { onMounted, onUnmounted, ref } from "vue";
   import { createCapsuleModalConnector } from "./capsule-modal-connector.tsx";
-  import { capsuleClient } from "./client/capsule.ts";
+  import { capsuleClient } from "./client/para.js";
   import Logo from "./assets/capsule-logo.svg";
   import { OAuthMethod } from "@usecapsule/react-sdk";
   import "./style.css";
