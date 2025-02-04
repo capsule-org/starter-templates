@@ -401,6 +401,93 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
+"@getpara/core-components@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@getpara/core-components/-/core-components-0.2.0.tgz#c06049cb1426d2b2e7fa4eaff5cfa8b78c2ff94a"
+  integrity sha512-2rql62IQcBCpj6ZNEE7vxeiZ8mAJuRhh7ZqtNp3N1bVlx1I00BTzsswUPhiIfYu9JzatrCb5qmTupa7fIRdhlA==
+  dependencies:
+    "@stencil/core" "^4.7.0"
+    color-blend "^4.0.0"
+    color2k "^2.0.3"
+    gsap "^3.12.5"
+    inputmask "5.0.9"
+    qrcode-with-logos "1.1.1"
+
+"@getpara/core-sdk@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@getpara/core-sdk/-/core-sdk-0.2.0.tgz#728c070be7dde0ee2184fc805f742809b6920276"
+  integrity sha512-J5sQXLu2LugSwLKuLJdP1r4zoOnbv3foBTF8s6rpXRd8mWioMGVGHBaTK/hapsBsksOEZcH9w8ezorbwlPKQLg==
+  dependencies:
+    "@celo/utils" "^8.0.0"
+    "@cosmjs/encoding" "^0.32.4"
+    "@getpara/user-management-client" "0.2.0"
+    "@noble/hashes" "^1.5.0"
+    base64url "^3.0.1"
+    buffer "6.0.3"
+    ethereumjs-util "7.1.5"
+    libphonenumber-js "1.11.2"
+    node-forge "^1.3.1"
+    qs "^6.12.0"
+
+"@getpara/react-common@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@getpara/react-common/-/react-common-0.2.0.tgz#6b5656d6a37b5eec78b3ad625a10bc970a594f8a"
+  integrity sha512-SFc/G10XneImXlDCl8gYFW4A8o22eXIoHuwN++6cmBxKAdVa4wYuCkIk+dwPpz7qZglrrxddgznaMvCXV3o+jw==
+  dependencies:
+    "@getpara/react-components" "0.2.0"
+    "@getpara/web-sdk" "0.2.0"
+    "@moonpay/moonpay-react" "^1.8.3"
+    "@ramp-network/ramp-instant-sdk" "^4.0.5"
+    "@stripe/crypto" "^0.0.4"
+    "@stripe/stripe-js" "^3.4.0"
+    libphonenumber-js "^1.11.1"
+    styled-components "^6.1.8"
+
+"@getpara/react-components@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@getpara/react-components/-/react-components-0.2.0.tgz#b278f211c2a771cb5b62e47f59bfae11c581585d"
+  integrity sha512-p1jL+feEsCa0NBLvJLUvRzI9BuWvkRM5pCq43/cUT/e7F02vtA+3iJz9Iro2Teh2z7KBweLDZvwAphRlbtFnPA==
+  dependencies:
+    "@getpara/core-components" "0.2.0"
+
+"@getpara/react-sdk@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@getpara/react-sdk/-/react-sdk-0.2.0.tgz#3577aad216def4481056a1fa086c77c6f7bfc0af"
+  integrity sha512-RoRuPrM0ObA1LPE0XmIv/6xLMSuwoFEF4bXae5vIyIvWRt8ao0sSmgvTL4BIfaKfVjrMMfiOISA0V2VWhAHc8A==
+  dependencies:
+    "@getpara/react-common" "0.2.0"
+    "@getpara/react-components" "0.2.0"
+    "@getpara/web-sdk" "0.2.0"
+    date-fns "^3.6.0"
+    detect-browser "^5.3.0"
+    framer-motion "11.3.28"
+    libphonenumber-js "^1.11.1"
+    styled-components "^6.1.8"
+    zustand "^4.5.2"
+
+"@getpara/user-management-client@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@getpara/user-management-client/-/user-management-client-0.2.0.tgz#7ea2859963fb00e5f6d25b5e64d80f353a098296"
+  integrity sha512-Pmcfl3K8JV6UuafytuMuXO5rSvPrwnpR4koZadFaGWGrmoDRS5S6FT8s/57HuFJOSu6OUsSkin95oo7xjEAlJw==
+  dependencies:
+    axios "^1.6.3"
+    libphonenumber-js "1.11.2"
+    qs "^6.12.0"
+
+"@getpara/web-sdk@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@getpara/web-sdk/-/web-sdk-0.2.0.tgz#9ce3b4a0ecdbab1c7022926a6879e4faed50dc99"
+  integrity sha512-c86RnsbVFKrHws9PygYaF315/3NKr5nTkNxWzxPHIFpmhbsmh7/6G7Rfxy9jzn4XARRNqJZ1GQyOLgoDy0artQ==
+  dependencies:
+    "@getpara/core-sdk" "0.2.0"
+    "@getpara/user-management-client" "0.2.0"
+    assert "^2.1.0"
+    base64url "3.0.1"
+    buffer "6.0.3"
+    cbor-web "8.1.0"
+    node-forge "1.3.1"
+    ua-parser-js "1.0.39"
+
 "@jridgewell/gen-mapping@^0.3.5":
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.5.tgz#dcce6aff74bdf6dad1a95802b69b04a2fcb1fb36"
@@ -749,92 +836,6 @@
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/@types/stylis/-/stylis-4.2.5.tgz#1daa6456f40959d06157698a653a9ab0a70281df"
   integrity sha512-1Xve+NMN7FWjY14vLoY5tL3BVEQ/n42YLwaqJIPYhotZ9uBHt87VceMwWQpzmdEt2TNXIorIFG+YeCUUW7RInw==
-
-"@usecapsule/core-components@3.20.0":
-  version "3.20.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/core-components/-/core-components-3.20.0.tgz#88f5f699b8867b48d550c893d418583d71045e0b"
-  integrity sha512-CY0sjLgficeKzpBLlbnlTr0oKg0AxXtV76TuToMEoZfv/RjCxYUG4RdDVMk/hYXiOnL3IFGVFJdKIs25QvSYsg==
-  dependencies:
-    "@stencil/core" "^4.7.0"
-    color-blend "^4.0.0"
-    color2k "^2.0.3"
-    gsap "^3.12.5"
-    inputmask "5.0.9"
-    qrcode-with-logos "1.1.1"
-
-"@usecapsule/core-sdk@2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/core-sdk/-/core-sdk-2.15.0.tgz#793e5f1142a8eaa479458c58f92f4f18c34c041a"
-  integrity sha512-bojNKIcrcgau7KS2LHIue7Kfy/u0NI2jpxotiAUpGbQ1XlaLdH5201CkITHQcruwhW3NstUGnem5gmFZLst9UA==
-  dependencies:
-    "@celo/utils" "^8.0.0"
-    "@cosmjs/encoding" "^0.32.4"
-    "@noble/hashes" "^1.5.0"
-    "@usecapsule/user-management-client" "1.37.0"
-    base64url "^3.0.1"
-    buffer "6.0.3"
-    ethereumjs-util "7.1.5"
-    libphonenumber-js "1.11.2"
-    node-forge "^1.3.1"
-    qs "^6.12.0"
-
-"@usecapsule/react-common@1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/react-common/-/react-common-1.12.0.tgz#0b6d923d0ca47d7edc4be9cbfc4f96f2d8875acc"
-  integrity sha512-2F4YUR6mOD+K4Z8Cp04d4cqSYlvNsbZzYTdtriNsR3Vda8Xv9U5SWTGZKyPBTj44fp4a0+xJ0GBLD9UZ1h6jtg==
-  dependencies:
-    "@moonpay/moonpay-react" "^1.8.3"
-    "@ramp-network/ramp-instant-sdk" "^4.0.5"
-    "@stripe/crypto" "^0.0.4"
-    "@stripe/stripe-js" "^3.4.0"
-    "@usecapsule/web-sdk" "2.15.0"
-    libphonenumber-js "^1.11.1"
-    styled-components "^6.1.8"
-
-"@usecapsule/react-components@3.20.0":
-  version "3.20.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/react-components/-/react-components-3.20.0.tgz#974612a9562e7c4b8355d43bc90c8d2f69bc2e7f"
-  integrity sha512-rBAkfdkCTIKW8zv1jk3GFJKPBYQYx/CgWb9ErjbkHWcYSs/PdFo4/co25if7zPXOu4vyQbzx4XDFw2uWVi9oIA==
-  dependencies:
-    "@usecapsule/core-components" "3.20.0"
-
-"@usecapsule/react-sdk@4.15.0":
-  version "4.15.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/react-sdk/-/react-sdk-4.15.0.tgz#618d307e4ba2cf4eb3f08bf647c2aad0c71ca747"
-  integrity sha512-rCHj874siBNaH/f3SgX+3zszO82oLWJa3Ht2kzxhbO/DkEuel3FVkzl02SKHice6pVYTFlMq037mcDctsr8fPw==
-  dependencies:
-    "@usecapsule/react-common" "1.12.0"
-    "@usecapsule/react-components" "3.20.0"
-    "@usecapsule/web-sdk" "2.15.0"
-    date-fns "^3.6.0"
-    detect-browser "^5.3.0"
-    framer-motion "11.3.28"
-    libphonenumber-js "^1.11.1"
-    styled-components "^6.1.8"
-    zustand "^4.5.2"
-
-"@usecapsule/user-management-client@1.37.0":
-  version "1.37.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/user-management-client/-/user-management-client-1.37.0.tgz#192eb72929739f49d984146d19eaa6d129278445"
-  integrity sha512-RVaxVhGvlJj+pWZdQ/8V0vRZYMeSFJeTIiPJ11P1t8Ehf0FJeXEj+3/n98gMDMmZTNXYR5HLI8Y0paA34cFtFg==
-  dependencies:
-    axios "^1.6.3"
-    libphonenumber-js "1.11.2"
-    qs "^6.12.0"
-
-"@usecapsule/web-sdk@2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/web-sdk/-/web-sdk-2.15.0.tgz#fa6c373f8cad6d1714407df3dfcddb759d32f233"
-  integrity sha512-0P7/TmPb0HJS9tehRzN6WcPyR0Gt2gN+e7MDWoTYaGwS70VcNaejAov5tQfeRqnnqC0fMzUm8aZy/ZQ0pC2vvg==
-  dependencies:
-    "@usecapsule/core-sdk" "2.15.0"
-    "@usecapsule/user-management-client" "1.37.0"
-    assert "^2.1.0"
-    base64url "3.0.1"
-    buffer "6.0.3"
-    cbor-web "8.1.0"
-    node-forge "1.3.1"
-    ua-parser-js "1.0.39"
 
 acorn-typescript@^1.4.13:
   version "1.4.13"
