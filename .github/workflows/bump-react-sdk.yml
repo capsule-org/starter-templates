@@ -1,4 +1,4 @@
-name: Bump @usecapsule/react-sdk
+name: Bump @getpara/react-sdk
 
 on:
   schedule:
@@ -22,7 +22,7 @@ jobs:
       - name: Bump dependency
         run: |
           while IFS= read -r file; do
-            ncu "@usecapsule/react-sdk" -u -f "@usecapsule/react-sdk" --packageFile "$file"
+            ncu "@getpara/react-sdk" -u -f "@getpara/react-sdk" --packageFile "$file"
           done < <(find . -name "package.json")
           if [ -z "$(git status --porcelain)" ]; then
             exit 0
@@ -47,15 +47,15 @@ jobs:
           git config user.email github-actions@github.com
           git checkout -b chore/bump-react-sdk
           git add .
-          git commit -m "chore: bump @usecapsule/react-sdk"
+          git commit -m "chore: bump @getpara/react-sdk"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           branch: chore/bump-react-sdk
-          commit-message: "chore: bump @usecapsule/react-sdk"
-          title: "chore: Bump @usecapsule/react-sdk"
-          body: "Auto-generated bump for @usecapsule/react-sdk."
+          commit-message: "chore: bump @getpara/react-sdk"
+          title: "chore: Bump @getpara/react-sdk"
+          body: "Auto-generated bump for @getpara/react-sdk."
           base: main
           labels: dependencies
           auto-merge: true

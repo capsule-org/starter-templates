@@ -1,9 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { CapsuleModal, CapsuleModalProps, OAuthMethod } from "@usecapsule/react-sdk";
-import "@usecapsule/react-sdk/styles.css";
+import { ParaModal, ParaModalProps, OAuthMethod } from "@getpara/react-sdk";
+import "@getpara/react-sdk/styles.css";
 
-export const createCapsuleModalConnector = (targetEl: HTMLElement, props: Omit<CapsuleModalProps, "isOpen">) => {
+export const createParaModalConnector = (targetEl: HTMLElement, props: Omit<ParaModalProps, "isOpen">) => {
   const root = createRoot(targetEl);
 
   const state = {
@@ -11,7 +11,7 @@ export const createCapsuleModalConnector = (targetEl: HTMLElement, props: Omit<C
     render: (isOpen: boolean) => {
       state.isOpen = isOpen;
       root.render(
-        React.createElement(CapsuleModal, {
+        React.createElement(ParaModal, {
           theme: {
             backgroundColor: "#FFF",
             foregroundColor: "#000",
@@ -20,14 +20,14 @@ export const createCapsuleModalConnector = (targetEl: HTMLElement, props: Omit<C
             font: "Inter",
             ...props.theme,
           },
-          capsule: props.capsule,
+          para: props.para,
           isOpen,
           onClose: () => {
             state.isOpen = false;
             state.render(false);
             props.onClose();
           },
-          appName: props.appName || "Capsule Modal Example",
+          appName: props.appName || "Para Modal Example",
           logo: props.logo,
           disableEmailLogin: props.disableEmailLogin,
           disablePhoneLogin: props.disablePhoneLogin,

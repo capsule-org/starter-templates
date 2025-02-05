@@ -1,9 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { CapsuleModal, CapsuleModalProps, OAuthMethod } from "@getpara/react-sdk";
+import { ParaModal, ParaModalProps, OAuthMethod } from "@getpara/react-sdk";
 import "@getpara/react-sdk/styles.css";
 
-export const createCapsuleModalConnector = (targetEl: HTMLElement, props: Omit<CapsuleModalProps, "isOpen">) => {
+export const createParaModalConnector = (targetEl: HTMLElement, props: Omit<ParaModalProps, "isOpen">) => {
   const root = createRoot(targetEl);
 
   const state = {
@@ -11,7 +11,7 @@ export const createCapsuleModalConnector = (targetEl: HTMLElement, props: Omit<C
     render: (isOpen: boolean) => {
       state.isOpen = isOpen;
       root.render(
-        React.createElement(CapsuleModal, {
+        React.createElement(ParaModal, {
           theme: {
             backgroundColor: "#FFF",
             foregroundColor: "#000",

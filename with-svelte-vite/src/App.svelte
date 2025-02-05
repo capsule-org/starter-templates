@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { CapsuleModal, OAuthMethod } from "@getpara/react-sdk";
+  import { ParaModal, OAuthMethod } from "@getpara/react-sdk";
   import "@getpara/react-sdk/styles.css";
   import Logo from "./assets/para-logo.svg";
   import { para } from "./client/para";
   import { sveltify } from "svelte-preprocess-react";
 
-  const react = sveltify({ CapsuleModal });
+  const react = sveltify({ ParaModal });
   let isModalOpen = false;
 </script>
 
@@ -14,7 +14,7 @@
   <button on:click={() => isModalOpen = true}>
     Open Para Modal
   </button>
-  <react.CapsuleModal
+  <react.ParaModal
     para={para}
     appName="Para Modal Starter Template"
     logo={Logo}

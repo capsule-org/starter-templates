@@ -1,8 +1,8 @@
-# Capsule Starter Templates
+# Para Starter Templates
 
-This repository provides minimal starter templates for integrating Capsule into various frameworks and environments.
-Each template folder is designed to be used as a starting point for your project, providing a basic setup with the
-Capsule client initialized.
+This repository provides minimal starter templates for integrating Para into various frameworks and environments. Each
+template folder is designed to be used as a starting point for your project, providing a basic setup with the Para
+client initialized.
 
 ## Available Templates
 
@@ -33,7 +33,7 @@ Capsule client initialized.
 
 ### Web Framework Templates
 
-- Capsule Modal integration
+- Para Modal integration
 - Environment-based API key configuration
 - Framework-specific builds and configurations:
   - **Next.js**: App Router with client-side rendering
@@ -46,13 +46,13 @@ Capsule client initialized.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/capsule-org/capsule-starter-templates.git
+   git clone https://github.com/para-org/para-starter-templates.git
    ```
 
 2. Choose and navigate to your desired template:
 
    ```bash
-   cd capsule-starter-templates/[template-name]
+   cd para-starter-templates/[template-name]
    ```
 
 3. Follow the template-specific README instructions for:
@@ -66,7 +66,7 @@ Capsule client initialized.
 Each template provides:
 
 1. Basic framework setup
-2. Capsule client initialization
+2. Para client initialization
 3. Minimal example component
 4. Environment configuration
 5. Framework-specific optimizations
@@ -77,13 +77,13 @@ Each template provides:
 ### General
 
 - Each template is independent and can be used as a standalone starter
-- Templates provide essential Capsule integration setup
+- Templates provide essential Para integration setup
 - Build upon these templates for your specific use case
 
 ### Framework Specific
 
 - React Native requires additional native setup steps
-- Web frameworks include Capsule Modal integration
+- Web frameworks include Para Modal integration
 - Some frameworks require specific plugins or preprocessors
 - SSR considerations for Next.js and Nuxt 3
 
@@ -91,8 +91,8 @@ For detailed instructions, refer to each template's individual README.
 
 ## Example Hub
 
-For more complex implementations and examples, check out our
-[Examples Hub](https://github.com/capsule-org/Examples-Hub/). You'll find comprehensive examples of:
+For more complex implementations and examples, check out our [Examples Hub](https://github.com/para-org/Examples-Hub/).
+You'll find comprehensive examples of:
 
 - Authentication implementations
 - Signer options
@@ -102,4 +102,4 @@ For more complex implementations and examples, check out our
 
 ## Documentation
 
-For detailed Capsule integration documentation, visit [docs.usecapsule.com](https://docs.usecapsule.com)
+For detailed Para integration documentation, visit [docs.getpara.com](https://docs.getpara.com)

@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
   import { onMounted, onUnmounted, ref } from "vue";
-  import { createCapsuleModalConnector } from "./para-modal-connector.tsx";
+  import { createParaModalConnector } from "./para-modal-connector.tsx";
   import { para } from "./client/para";
   import Logo from "./assets/para-logo.svg";
   import { OAuthMethod } from "@getpara/react-sdk";
@@ -22,7 +22,7 @@
     const container = document.createElement("div");
     document.body.appendChild(container);
 
-    modalConnector.value = createCapsuleModalConnector(container, {
+    modalConnector.value = createParaModalConnector(container, {
       para: para,
       onClose: () => {
         modalConnector.value?.close();

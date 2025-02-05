@@ -1,27 +1,27 @@
-# Capsule Svelte + Vite Starter Template
+# Para Svelte + Vite Starter Template
 
-This template provides a minimal setup to get Capsule working in a Svelte + Vite application. It includes a basic
-Capsule client initialization and the necessary configurations to support React components within Svelte.
+This template provides a minimal setup to get Para working in a Svelte + Vite application. It includes a basic Para
+client initialization and the necessary configurations to support React components within Svelte.
 
 ## Features
 
-- Minimal Capsule client configuration using `@usecapsule/react-sdk`
-- Pre-configured Capsule Modal setup
+- Minimal Para client configuration using `@getpara/react-sdk`
+- Pre-configured Para Modal setup
 - Environment-based API key configuration
 - React integration within Svelte using `svelte-preprocess-react`
 - Vite configuration with `vite-plugin-node-polyfills`
 
 ## Prerequisites
 
-- Capsule API Key (obtain from [developer.usecapsule.com](https://developer.usecapsule.com))
+- Para API Key (obtain from [developer.getpara.com](https://developer.getpara.com))
 
 ## Getting Started
 
 1. Copy this template folder to your project location and rename it:
 
    ```bash
-   cp -r path/to/capsule-starter-templates/with-svelte-vite my-capsule-project
-   cd my-capsule-project
+   cp -r path/to/para-starter-templates/with-svelte-vite my-para-project
+   cd my-para-project
    ```
 
 2. Install dependencies (choose your preferred package manager):
@@ -40,7 +40,7 @@ Capsule client initialization and the necessary configurations to support React 
    bun install
    ```
 
-3. Set up your Capsule API key:
+3. Set up your Para API key:
 
    - Rename `.env.example` to `.env`
    - Update the API key:
@@ -71,7 +71,7 @@ This Svelte + Vite starter template includes several important configurations:
 
 ### React Integration
 
-The template includes React as a dependency since the Capsule Modal is React-based:
+The template includes React as a dependency since the Para Modal is React-based:
 
 ```json
 {
@@ -109,33 +109,33 @@ export default defineConfig({
 });
 ```
 
-### Using Capsule Components
+### Using Para Components
 
-To use the Capsule Modal in your Svelte components:
+To use the Para Modal in your Svelte components:
 
 ```svelte
 <script lang="ts">
-  import { CapsuleModal } from "@usecapsule/react-sdk";
+  import { ParaModal } from "@getpara/react-sdk";
   import { sveltify } from "svelte-preprocess-react";
 
-  const react = sveltify({ CapsuleModal });
+  const react = sveltify({ ParaModal });
 </script>
 
-<react.CapsuleModal {...yourProps} />
+<react.ParaModal {...yourProps} />
 ```
 
 ## Usage
 
 1. Build upon the provided example component
-2. Implement additional Capsule features as needed
-3. Modify the CapsuleModal component props as required
+2. Implement additional Para features as needed
+3. Modify the ParaModal component props as required
 
-For detailed documentation, visit [docs.usecapsule.com](https://docs.usecapsule.com)
+For detailed documentation, visit [docs.getpara.com](https://docs.getpara.com)
 
 ## Example Implementation
 
-For more complex implementations and examples, check out our
-[Examples Hub](https://github.com/capsule-org/Examples-Hub/). You'll find examples of:
+For more complex implementations and examples, check out our [Examples Hub](https://github.com/para-org/Examples-Hub/).
+You'll find examples of:
 
 - Authentication options
 - Signer implementations

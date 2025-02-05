@@ -1,27 +1,27 @@
-# Capsule React Vite Starter Template
+# Para React Vite Starter Template
 
-This template provides a minimal setup to get Capsule working in a Vite + React application. It includes a basic Capsule
+This template provides a minimal setup to get Para working in a Vite + React application. It includes a basic Para
 client initialization and the necessary Vite configurations.
 
 ## Features
 
-- Minimal Capsule client configuration using `@usecapsule/react-sdk`
-- Pre-configured Capsule Modal setup
+- Minimal Para client configuration using `@getpara/react-sdk`
+- Pre-configured Para Modal setup
 - Environment-based API key configuration
 - Vite configuration with `vite-plugin-node-polyfills` for required Node.js polyfills
 - Fast development setup with Vite
 
 ## Prerequisites
 
-- Capsule API Key (obtain from [developer.usecapsule.com](https://developer.usecapsule.com))
+- Para API Key (obtain from [developer.getpara.com](https://developer.getpara.com))
 
 ## Getting Started
 
 1. Copy this template folder to your project location and rename it:
 
    ```bash
-   cp -r path/to/capsule-starter-templates/with-react-vite my-capsule-project
-   cd my-capsule-project
+   cp -r path/to/para-starter-templates/with-react-vite my-para-project
+   cd my-para-project
    ```
 
 2. Install dependencies (choose your preferred package manager):
@@ -40,7 +40,7 @@ client initialization and the necessary Vite configurations.
    bun install
    ```
 
-3. Set up your Capsule API key:
+3. Set up your Para API key:
 
    - Rename `.env.example` to `.env`
    - Update the API key:
@@ -71,7 +71,7 @@ This Vite + React starter template includes essential configurations:
 
 ### Required Vite Plugin
 
-The template uses `vite-plugin-node-polyfills` to provide necessary Node.js polyfills required by Capsule. This is
+The template uses `vite-plugin-node-polyfills` to provide necessary Node.js polyfills required by Para. This is
 configured in `vite.config.ts`:
 
 ```typescript
@@ -86,15 +86,15 @@ export default defineConfig({
 ## Usage
 
 1. Build upon the provided example component
-2. Implement additional Capsule features as needed
-3. Modify the CapsuleModal component props as required
+2. Implement additional Para features as needed
+3. Modify the ParaModal component props as required
 
-For detailed documentation, visit [docs.usecapsule.com](https://docs.usecapsule.com)
+For detailed documentation, visit [docs.getpara.com](https://docs.getpara.com)
 
 ## Example Implementation
 
-For more complex implementations and examples, check out our
-[Examples Hub](https://github.com/capsule-org/Examples-Hub/). You'll find examples of:
+For more complex implementations and examples, check out our [Examples Hub](https://github.com/para-org/Examples-Hub/).
+You'll find examples of:
 
 - Authentication options
 - Signer implementations

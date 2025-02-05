@@ -1,5 +1,5 @@
 "use client";
-import { AuthLayout, CapsuleModal, OAuthMethod } from "@getpara/react-sdk";
+import { AuthLayout, ParaModal, OAuthMethod } from "@getpara/react-sdk";
 import "@getpara/react-sdk/styles.css";
 import { useState } from "react";
 import { para } from "@/client/para";
@@ -16,7 +16,7 @@ export default function Home() {
         style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}>
         Open Para Modal
       </button>
-      <CapsuleModal
+      <ParaModal
         appName="Para Modal Starter Template"
         authLayout={[AuthLayout.AUTH_FULL]}
         para={para}
